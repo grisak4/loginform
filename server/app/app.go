@@ -13,12 +13,12 @@ import (
 
 func Run() {
 	r := gin.Default()
-
 	gin.SetMode(gin.ReleaseMode)
 
 	config.InitConfigs()
 
 	dbPostgres.ConnectDB()
+	defer dbPostgres.CloseDB()
 
 	routes.InitRoutes(r, dbPostgres.GetDB())
 

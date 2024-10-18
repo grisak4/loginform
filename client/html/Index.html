@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Form</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="toggle-buttons">
+                <button id="loginBtn" class="active" onclick="toggleForm('login')">Login</button>
+                <button id="registerBtn" onclick="toggleForm('register')">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form active" onsubmit="submitForm(event, 'login')">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="form" onsubmit="submitForm(event, 'register')">
+                <h2>Register</h2>
+                <div class="input-group">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

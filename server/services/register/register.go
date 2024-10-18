@@ -12,10 +12,10 @@ import (
 func PostRegisterNewUser(c *gin.Context, db *gorm.DB) {
 	var newUser models.User
 
-	if err := c.BindJSON(&newUser); err != nil {
+	if err := c.ShouldBindJSON(&newUser); err != nil {
 		log.Fatalf("Error with reading user: %s", err)
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
+			"error": err.Error(),
 		})
 		return
 	}
@@ -23,12 +23,12 @@ func PostRegisterNewUser(c *gin.Context, db *gorm.DB) {
 	if err := db.Create(&newUser).Error; err != nil {
 		log.Fatalf("Error with adding user to db: %s", err)
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": err,
+			"error": err.Error(),
 		})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"status": "User have registrated",
+		"success": true,
 	})
 }
