@@ -9,7 +9,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func PostRegisterNewUser(c *gin.Context, db gorm.DB) {
+func PostRegisterNewUser(c *gin.Context, db *gorm.DB) {
 	var newUser models.User
 
 	if err := c.BindJSON(&newUser); err != nil {
