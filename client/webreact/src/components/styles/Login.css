@@ -1,0 +1,54 @@
+body {
+    background: url("../styles/loginform/backgroundform.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #000;
+    font-weight: bold;
+}
+
+.container{
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    background-color: #fff;
+    width: 450px;
+    height: 550px;
+}
+
+.form-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+form input::placeholder {
+    color: #000;
+    text-align: start;
+    padding-left: 20px;
+}
+
+form input {
+    all: unset;
+
+    margin-bottom: 24px;
+
+    -webkit-box-shadow: 4px 4px 51px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 51px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 51px 0px rgba(34, 60, 80, 0.2);
+
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 20px;
+
+    width: 75%;
+    height: 60px;
+}
+
+input[type='submit'] {
+    width: 60%;
+    height: 50px;
+    background: #de38ff;
+    color: #fff;
+    font-weight: normal;
+}

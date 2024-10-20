@@ -2,7 +2,9 @@ package routes
 
 import (
 	//"loginform/middlewares/auth"
+	"loginform/middlewares/auth"
 	"loginform/middlewares/cors"
+
 	////
 	"loginform/services/hello"
 	"loginform/services/login"
@@ -16,10 +18,10 @@ import (
 func InitRoutes(router *gin.Engine, db *gorm.DB) {
 	cors.InitCors(router)
 
-	// test
-	router.GET("/hello", func(c *gin.Context) {
-		hello.GetHello(c)
-	})
+	// // test
+	// router.GET("/hello", func(c *gin.Context) {
+	// 	hello.GetHello(c)
+	// })
 
 	// authorization
 	router.POST("/register", func(c *gin.Context) {
@@ -30,9 +32,11 @@ func InitRoutes(router *gin.Engine, db *gorm.DB) {
 	})
 
 	// auth middleware
-	// authRoutes := router.Group("/auth")
-	// authRoutes.Use(auth.AuthMiddleware())
-	// {
-
-	// }
+	authRoutes := router.Group("/auth")
+	authRoutes.Use(auth.AuthMiddleware())
+	{
+		authRoutes.GET("/hello", func(c *gin.Context) {
+			hello.GetHello(c)
+		})
+	}
 }

@@ -7,10 +7,11 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
-func GenerateJWT(username string) (string, error) {
+func GenerateJWT(username, password string) (string, error) {
 	expirationTime := time.Now().Add(5 * time.Minute)
 	claims := &Claims{
 		Username: username,
+		Password: password,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(),
 		},
