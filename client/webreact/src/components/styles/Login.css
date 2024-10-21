@@ -1,5 +1,8 @@
 body {
-    background: url("../styles/loginform/backgroundform.jpg");
+    background-image: linear-gradient(to bottom left, #01003a, #bd637f, #2d6d88);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,47 +11,135 @@ body {
     font-weight: bold;
 }
 
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .container{
     text-align: center;
     justify-content: center;
     align-content: center;
     background-color: #fff;
+    border-radius: 20px;
     width: 450px;
     height: 550px;
+    padding: 0px 0px 30px 0px;
 }
 
 .form-header {
-    font-size: 24px;
+    font-size: 38px;
     font-weight: bold;
-    margin-bottom: 24px;
+    margin-top: 40px;
+    margin-bottom: 64px;
 }
 
 form input::placeholder {
-    color: #000;
+    color: #5c5c5c;
     text-align: start;
-    padding-left: 20px;
+    transition: 1s;
 }
 
 form input {
     all: unset;
-
+    text-align: start;
+    padding-left: 20px;
     margin-bottom: 24px;
 
-    -webkit-box-shadow: 4px 4px 51px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 51px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 51px 0px rgba(34, 60, 80, 0.2);
-
-    border: 1px solid rgb(212, 212, 212);
+    box-shadow: 0px 4px 20px 0px rgba(34, 60, 80, 0.2);
+    border: 1px solid #fff;
     border-radius: 20px;
 
     width: 75%;
     height: 60px;
+
+    transition: 0.1s;
+}
+
+form input[type='text']:hover, form input[type='password']:hover {
+    border: 1px solid rgb(0, 204, 255);
+}
+
+:hover::placeholder {
+    color: #000000;
+}
+input::content {
+    background: #000;
 }
 
 input[type='submit'] {
-    width: 60%;
-    height: 50px;
+    text-align: center;
+    padding: 0px;
+
+    width: 40%;
+    height: 60px;
+
     background: #de38ff;
+    border-radius: 40px;
+    border: 0;
+
+    box-shadow: 0px 4px 25px 0px #de38ff;
+
     color: #fff;
+    font-weight:500;
+    font-size: 16px;
+
+    margin-bottom: 52px;
+
+    transition: 0.3s;
+}
+
+input[type='submit']:hover {
+    background: #000000;
+    box-shadow: 0px 4px 25px 0px #000000;
+}
+
+/*  */
+
+.anotherlogin-text {
+    color: rgb(194, 194, 194);
     font-weight: normal;
+    margin-bottom: 24px;
+}
+
+.anotherlogin-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.anotherlogin-icon {
+    box-shadow: 0px 5px 50px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 360px;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 0px 20px 0px 20px;
+
+    transition: 0.5s;
+}
+
+.anotherlogin-icon:hover {
+    width: 60px;
+    height: 60px;
+}
+
+.icon-github {
+    height: 100%;
+    background: url('../styles/loginform/github.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.icon-google {
+    height: 100%;
+    background: url('../styles/loginform/google.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
