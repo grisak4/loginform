@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 const AuthRedirect = () => {
-  const isAuthenticated = !!localStorage.getItem('token'); // Проверяем наличие токена
+  const isAuthenticated = !!localStorage.getItem('token');
 
   return isAuthenticated ? <Navigate to="/main" /> : <Navigate to="/login" />;
 };
