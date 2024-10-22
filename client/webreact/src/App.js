@@ -1,15 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './components/auth/Login';
-// import Main from './components/Home';
-// import PrivateRoute from './components/PrivateRoute';
+import Register from './components/auth/Regin';
+import Home from './components/Home';
+import PrivateRoute from './components/PrivateRoute';
+import AuthRedirect from './components/AuthRedirect';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="login" element={<Login />} />
+        <Route path='/' element={<AuthRedirect />}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-        {/* <Route path="main" element={<PrivateRoute element={<Main />} />} /> */}
+        <Route element={<PrivateRoute />}>
+          <Route path="/main" element={<Home />} />
+        </Route>
 
         <Route path="*" element={<h1>404 - Страница не найдена</h1>} />
       </Routes>

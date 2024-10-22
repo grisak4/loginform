@@ -23,7 +23,7 @@ body {
     }
 }
 
-.container{
+.regin-container{
     text-align: center;
     justify-content: center;
     align-content: center;
@@ -31,10 +31,10 @@ body {
     border-radius: 20px;
     width: 450px;
     height: 550px;
-    padding: 0px 0px 30px 0px;
+    padding: 0px 0px 100px 0px;
 }
 
-.form-header {
+.regin-form-header {
     font-size: 38px;
     font-weight: bold;
     margin-top: 40px;
@@ -103,19 +103,19 @@ input[type='submit']:hover {
 
 /*  */
 
-.anotherlogin-text {
+.regin-anotherlogin-text {
     color: rgb(194, 194, 194);
     font-weight: normal;
     margin-bottom: 20px;
 }
 
-.anotherlogin-icons {
+.regin-anotherlogin-icons {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-.anotherlogin-icon {
+.regin-anotherlogin-icon {
     box-shadow: 0px 5px 50px 0px rgba(34, 60, 80, 0.2);
     border-radius: 360px;
 
@@ -127,18 +127,18 @@ input[type='submit']:hover {
     transition: 0.5s;
 }
 
-.anotherlogin-icon:hover {
+.regin-anotherlogin-icon:hover {
     width: 60px;
     height: 60px;
 }
 
-.icon-github {
+.regin-icon-github {
     height: 100%;
     background: url('../styles/loginform/github.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
-.icon-google {
+.regin-icon-google {
     height: 100%;
     background: url('../styles/loginform/google.svg');
     background-repeat: no-repeat;
@@ -147,12 +147,12 @@ input[type='submit']:hover {
 
 /*  */
 
-.accounthave-link {
+.regin-accounthave-link {
     color: #000000;
     text-decoration: none;
     transition: 0.5s;
 }
 
-.accounthave-link:hover {
+.regin-accounthave-link:hover {
     color: #de38ff;
 }

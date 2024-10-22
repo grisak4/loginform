@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
 import App from './App'; // Импорт вашего основного компонента приложения
-import { BrowserRouter } from 'react-router-dom'; // Импортируем BrowserRouter для маршрутизации
 
 // Получаем корневой элемент для рендеринга
 const rootElement = document.getElementById('root');
